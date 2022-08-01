@@ -1,0 +1,24 @@
+<html>
+<body>
+<ul>
+    <li><a href="http://localhost:8080/actuator">actuator</a>
+    <li><a href="http://localhost:8080/actuator/health">health</a>
+    <li><a href="http://localhost:8080/greeting">greeting</a>
+</ul>
+<hr>
+<ul>
+    <li><a href="javascript:void(0)" onclick="add()">add</a></li>
+    <li><a href="/users/all">all</a></li>
+    <li><a href="/users/find/ant">find like ant</a></li>
+</ul>
+<div id="results">
+</div>
+<script>
+function add() {
+    fetch("/users/add?name=ant&email=spring-demo@maxant.co.uk", { method: "POST"})
+    .then(r => r.json())
+    .then(r => document.getElementById("results").innerHTML = JSON.stringify(r));
+}
+</script>
+</body>
+</html>
