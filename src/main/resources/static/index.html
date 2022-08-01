@@ -9,13 +9,23 @@
 <ul>
     <li><a href="javascript:void(0)" onclick="add()">add</a></li>
     <li><a href="/users/all">all</a></li>
-    <li><a href="/users/find/ant">find like ant</a></li>
+    <li><a href="/users/find/name-like/ant">find name like ant</a></li>
+    <li><a href="/users/find/name/ant">find name is ant</a></li>
+    <li><a href="/users/count">count</a></li>
+    <li><a href="javascript:void(0)" onclick="update()">update all</a></li>
 </ul>
 <div id="results">
 </div>
 <script>
 function add() {
-    fetch("/users/add?name=ant&email=spring-demo@maxant.co.uk", { method: "POST"})
+    document.getElementById("results").innerHTML = "loading...";
+    fetch("/users/add?name=ant", { method: "POST"})
+    .then(r => r.json())
+    .then(r => document.getElementById("results").innerHTML = JSON.stringify(r));
+}
+function update() {
+    document.getElementById("results").innerHTML = "loading...";
+    fetch("/users/update/all", { method: "PUT"})
     .then(r => r.json())
     .then(r => document.getElementById("results").innerHTML = JSON.stringify(r));
 }

@@ -1,4 +1,4 @@
-# a project for exploring spring boot 2.7
+# a project for exploring the integration of spring boot with abstratium.dev
 
 ## Setup
 
@@ -22,6 +22,7 @@ run mysql - see abstratium.dev manual
 
 - debug info on startup about which beans are available
 - test scopes and making tests run quick
+- programatically set port, etc. on boot app?
 - bean lifecycles
 - flyway
 - spring data
@@ -30,6 +31,10 @@ run mysql - see abstratium.dev manual
 - a dev profile, which shows sql
 - a test profile which uses spring.jpa.hibernate.ddl-auto=create for ITs, or should we use flyway there too?
 - rest exception mappers
+- https://spring.io/blog/2021/08/22/structuring-your-code-for-spring-framework-and-spring-boot
+- https://www.baeldung.com/spring-boot-annotations
+- https://www.baeldung.com/transaction-configuration-with-jpa-and-spring
+- 
 - [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/2.7.2/reference/htmlsingle/#using.devtools)
 - [Spring Configuration Processor](https://docs.spring.io/spring-boot/docs/2.7.2/reference/htmlsingle/#appendix.configuration-metadata.annotation-processor)
 - [Spring Web](https://docs.spring.io/spring-boot/docs/2.7.2/reference/htmlsingle/#web)
