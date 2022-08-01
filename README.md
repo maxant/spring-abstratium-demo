@@ -44,6 +44,7 @@ run mysql - see abstratium.dev manual
 - https://www.baeldung.com/spring-boot-annotations
 - https://www.baeldung.com/transaction-configuration-with-jpa-and-spring
 - https://spring.io/guides/tutorials/spring-security-and-angular-js/
+- https://www.baeldung.com/spring-security-method-security => using @Secured
 - [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/2.7.2/reference/htmlsingle/#using.devtools)
 - [Spring Configuration Processor](https://docs.spring.io/spring-boot/docs/2.7.2/reference/htmlsingle/#appendix.configuration-metadata.annotation-processor)
 - [Spring Web](https://docs.spring.io/spring-boot/docs/2.7.2/reference/htmlsingle/#web)

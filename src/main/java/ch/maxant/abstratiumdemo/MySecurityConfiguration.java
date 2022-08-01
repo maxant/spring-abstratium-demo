@@ -2,6 +2,7 @@ package ch.maxant.abstratiumdemo;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -12,6 +13,10 @@ import org.springframework.security.web.SecurityFilterChain;
 // https://spring.io/guides/gs/securing-web/
 @Configuration(proxyBeanMethods = false)
 @EnableWebSecurity(debug = true)
+@EnableGlobalMethodSecurity( // https://www.baeldung.com/spring-security-method-security
+        prePostEnabled = false,
+        securedEnabled = true,
+        jsr250Enabled = false)
 public class MySecurityConfiguration {
 /*
     @Bean

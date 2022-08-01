@@ -1,15 +1,15 @@
 <html>
 <body>
 <ul>
-    <li><a href="http://localhost:8080/actuator">actuator</a>
-    <li><a href="http://localhost:8080/actuator/health">health</a>
-    <li><a href="http://localhost:8080/greeting">greeting</a>
-    <li><a href="http://localhost:8080/home">home (no login required)</a>
-    <li><a href="http://localhost:8080/hello">hello (login using user/password)</a>
+    <li><a href="http://localhost:8080/actuator">actuator</a> (requires login, see below)</li>
+    <li><a href="http://localhost:8080/actuator/health">health</a> (requires login, see below)</li>
+    <li><a href="http://localhost:8080/greeting">greeting</a> (requires login, see below)</li>
+    <li><a href="http://localhost:8080/home">home (no login required)</a></li>
+    <li><a href="http://localhost:8080/hello">hello (login using "user"/"password")</a></li>
 </ul>
 <hr>
 <ul>
-    <li><a href="javascript:void(0)" onclick="add()">add</a></li>
+    <li><a href="javascript:void(0)" onclick="add()">add</a> (you need to be logged in! see above)</li>
     <li><a href="/users/all">all</a></li>
     <li><a href="/users/find/name-like/ant">find name like ant</a></li>
     <li><a href="/users/find/name/ant">find name is ant</a></li>
@@ -22,8 +22,8 @@
 function add() {
     document.getElementById("results").innerHTML = "loading...";
     fetch("/users/add?name=ant", { method: "POST"})
-    .then(r => r.json())
-    .then(r => document.getElementById("results").innerHTML = JSON.stringify(r));
+    .then(r => r.text())
+    .then(r => document.getElementById("results").innerHTML = r);
 }
 function update() {
     document.getElementById("results").innerHTML = "loading...";

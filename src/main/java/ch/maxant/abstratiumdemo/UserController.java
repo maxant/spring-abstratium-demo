@@ -1,6 +1,10 @@
 package ch.maxant.abstratiumdemo;
 
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -22,12 +26,18 @@ public class UserController {
     @Autowired
     private MyOtherService myOtherService;
 
+    @Autowired
+    Logger log;
+
     @PersistenceContext
     private EntityManager em;
 
     @PostMapping(path = "/add")
     @Transactional(propagation = Propagation.REQUIRED)
+    @Secured("ROLE_ADMIN") // Note how we need to prepend `ROLE_` here! search for EnableGlobalMethodSecurity in this code base
     public User addNewUser(@RequestParam String name) {
+        SecurityContext securityContext = SecurityContextHolder.getContext();
+        log.info("user is " + securityContext.getAuthentication().getName());
         User u = new User();
         u.setName(name + "-" + myService.getRandomLong());
         u.setModified(LocalDateTime.now());
