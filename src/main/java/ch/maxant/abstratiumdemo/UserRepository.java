@@ -21,6 +21,6 @@ public interface UserRepository extends //
     @Query("update User u set modified = :modified")
     int updateAll(@Param("modified") LocalDateTime modified);
 
-    // example without Query
+    // example without Query annotation: https://www.baeldung.com/spring-data-derived-queries
     Iterable<User> findByNameAndModifiedNotNull(@Param("name") String name);
 }

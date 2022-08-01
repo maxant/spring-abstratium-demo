@@ -15,26 +15,35 @@ run mysql - see abstratium.dev manual
 
 - http://localhost:8080/
 
+- https://docs.spring.io/spring-boot/docs/ -> all versions
+  - https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/
 - https://start.spring.io/
 - https://spring.io/guides
+
+## useful
+
+- other config: 
+  - `java -jar app.jar --spring.config.location=config/*/` or with a specific file name
+  - `java -jar app.jar --property="value"`
+  - `java -Dproperty.name="value" -jar app.jar`
+  - env vars:
+    - `export name=value` and then `java -jar app.jar`
 
 ## To Explore
 
 - debug info on startup about which beans are available
 - test scopes and making tests run quick
 - programatically set port, etc. on boot app?
+- https://www.baeldung.com/spring-interview-questions
 - bean lifecycles
-- flyway
-- spring data
 - devtools and reloading - how does that work with prod?
-- repository super interface
 - a dev profile, which shows sql
 - a test profile which uses spring.jpa.hibernate.ddl-auto=create for ITs, or should we use flyway there too?
 - rest exception mappers
 - https://spring.io/blog/2021/08/22/structuring-your-code-for-spring-framework-and-spring-boot
 - https://www.baeldung.com/spring-boot-annotations
 - https://www.baeldung.com/transaction-configuration-with-jpa-and-spring
-- 
+- https://spring.io/guides/tutorials/spring-security-and-angular-js/
 - [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/2.7.2/reference/htmlsingle/#using.devtools)
 - [Spring Configuration Processor](https://docs.spring.io/spring-boot/docs/2.7.2/reference/htmlsingle/#appendix.configuration-metadata.annotation-processor)
 - [Spring Web](https://docs.spring.io/spring-boot/docs/2.7.2/reference/htmlsingle/#web)

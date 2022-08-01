@@ -13,7 +13,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class AbstratiumDemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AbstratiumDemoApplication.class, args);
+        SpringApplication app = new SpringApplication(AbstratiumDemoApplication.class);
+        // app.setDefaultProperties(Collections.singletonMap("server.port", "8083"));
+        // app.setWebApplicationType(WebApplicationType.NONE);
+        app.run(args);
+		// or also just this: SpringApplication.run(AbstratiumDemoApplication.class, args);
 	}
 
 }
